@@ -1,25 +1,58 @@
 # Trevino Garage Door Repair — trevinogaragedoorrepairservice.site
 
-Sitio estático en HTML + CSS puro (sin JavaScript, sin librerías, sin dependencias externas).
+Aplicación **Next.js** (App Router) que se compila a un sitio estático: el HTML y
+el CSS que salen del build no necesitan servidor ni traen JavaScript de la propia
+página. Migrado desde HTML plano el 28 de agosto de 2026.
+
+## Cómo se trabaja
+
+```bash
+npm install       # una vez
+npm run dev       # http://localhost:3000
+npm run build     # genera out/ con el sitio estatico completo
+```
+
+`out/` es lo que se sube al hosting, o lo que compilan Vercel / Netlify /
+GitHub Actions. No se commitea: está en `.gitignore`, igual que `node_modules`.
 
 ## Estructura
 
 ```
-index.html                 ->  /                    home
-BocaRaton/index.html       ->  /BocaRaton           oficina principal
-Plantation/index.html      ->  /Plantation
-NorthPalmBeach/index.html  ->  /NorthPalmBeach
-DelrayBeach/index.html     ->  /DelrayBeach
-CoralGables/index.html     ->  /CoralGables
-css/styles.css             ->  estilos base (header, footer, botones, tarjetas)
-css/location.css           ->  componentes de las páginas de ubicación
-img/                       ->  fotos opcionales (ver img/LEEME.txt)
-ref/                       ->  capturas de referencia (no subir al hosting)
-robots.txt  ·  sitemap.xml
+app/layout.jsx           <html>, CSS global y metadata compartida
+app/page.jsx             /                 home
+app/[city]/page.jsx      /BocaRaton /Plantation /NorthPalmBeach /DelrayBeach /CoralGables
+components/Header.jsx    cabecera, nav y boton Free Quote
+components/Footer.jsx    pie, barra de llamada movil y la tarjeta de resena
+components/TopBar.jsx    franja superior de la home
+components/Icons.jsx     los 27 SVG del sitio, por nombre: <Icon name="pin" />
+data/site.js             TODO el contenido: marca, telefono, ciudades, resenas, FAQ
+css/styles.css           estilos base (header, footer, botones, tarjetas)
+css/location.css         componentes de las paginas de ubicacion
+public/img/              fotos, servidas en /img/...
+public/robots.txt · public/sitemap.xml · public/favicon.svg
+assets/originales/       los originales de las fotos (NO se publican)
+docs/ref/                capturas de referencia (NO se publican)
 ```
 
-Cada carpeta con `index.html` genera la URL limpia (`/NorthPalmBeach`).
-Subí todo a la raíz del hosting (podés omitir `ref/`).
+Las cinco páginas de ubicación son **una sola ruta**: `app/[city]/page.jsx` con
+`generateStaticParams()`. Todo lo que cambia entre ellas —dirección, ZIP, mapa,
+párrafo de "Local Knowledge" y **las tres reseñas de cada ciudad**— vive en el
+array `cities` de `data/site.js`, que se extrajo del HTML original durante la
+migración. Añadir una oficina es añadir un objeto a ese array.
+
+Las URLs limpias se conservan (`/NorthPalmBeach`) gracias a `trailingSlash: true`
+en `next.config.mjs`: el build escribe `out/NorthPalmBeach/index.html`.
+
+### Dónde tocar cada cosa
+
+| Quieres cambiar… | Archivo |
+|---|---|
+| Teléfono, correo, horario, marca, rango de precios | `data/site.js`, objeto `site` |
+| Una dirección, una reseña, el texto local de una ciudad | `data/site.js`, array `cities` |
+| Las tarjetas de servicio | `data/site.js`, `homeServices` / `cityServices` |
+| Las preguntas frecuentes | `data/site.js`, `faq` |
+| Colores y tipografía | `css/styles.css`, bloque `:root` |
+| Cabecera, pie, menú | `components/` |
 
 ## Las 5 páginas de ubicación
 

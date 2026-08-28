@@ -10,7 +10,7 @@
   padding: 62px 0 70px;
   background:
     linear-gradient(100deg, rgba(6, 26, 51, .96) 0%, rgba(6, 26, 51, .9) 42%, rgba(18, 58, 104, .78) 100%),
-    url("../img/hero-garage.jpg") center / cover no-repeat,
+    url("/img/hero-garage.jpg") center / cover no-repeat,
     linear-gradient(160deg, #123a68, #061a33);
 }
 .hero--loc::after { opacity: .6; }
@@ -88,8 +88,8 @@
     linear-gradient(180deg, rgba(6, 26, 51, .3), rgba(6, 26, 51, .55)),
     repeating-linear-gradient(180deg, rgba(255,255,255,.1) 0 38px, rgba(255,255,255,0) 38px 42px);
 }
-.photo--why { background-image: url("../img/why-garage.jpg"); }
-.photo--pricing { background-image: url("../img/pricing-garage.jpg"); }
+.photo--why { background-image: url("/img/why-garage.jpg"); }
+.photo--pricing { background-image: url("/img/pricing-garage.jpg"); }
 .photo__label {
   position: absolute; left: 22px; bottom: 22px; z-index: 2;
   background: var(--accent); color: var(--navy-900);

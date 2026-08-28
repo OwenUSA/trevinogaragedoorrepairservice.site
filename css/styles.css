@@ -225,7 +225,7 @@ summary:focus-visible,
   background:
     linear-gradient(115deg, rgba(6, 26, 51, .96) 0%, rgba(11, 39, 72, .9) 46%, rgba(18, 58, 104, .84) 100%),
     radial-gradient(1100px 520px at 80% 10%, rgba(255, 194, 51, .3), transparent 62%),
-    url("../img/hero-garage.jpg") center / cover no-repeat,
+    url("/img/hero-garage.jpg") center / cover no-repeat,
     linear-gradient(180deg, #123a68, #061a33);
   color: #fff;
   padding: 92px 0 84px;
