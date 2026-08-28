@@ -1,0 +1,34 @@
+IMAGENES DEL SITIO
+==================
+
+EN USO (ya cableadas en el CSS, no hay que tocar el HTML):
+
+  hero-garage.jpg      1920x1439 · 200 KB
+                       Fondo del hero de la home y de las 5 paginas de ubicacion.
+                       Reglas: .hero (css/styles.css) y .hero--loc (css/location.css)
+
+  why-garage.jpg       1400x1045 · 123 KB
+                       Seccion "Why {ciudad} chooses Trevino".
+                       Regla: .photo--why (css/location.css)
+
+  pricing-garage.jpg   1400x1045 · 107 KB
+                       Seccion "Fair, transparent pricing in {ciudad}".
+                       Regla: .photo--pricing (css/location.css)
+
+Si reemplazas alguna, usa el MISMO nombre de archivo y listo. Si cambias la
+extension (png/webp), hay que actualizar la ruta en las reglas de arriba.
+
+Las rutas del CSS son relativas a la carpeta css/ (../img/...), asi que funcionan
+igual desde la home y desde las paginas de ubicacion.
+
+
+NO EN USO POR EL SITIO:
+
+  logo.jpg             1024x1024 · 57 KB
+                       Logo maestro, para Google Business Profile, redes y papeleria.
+                       En la web el logo es un SVG dentro del HTML (nitido y sin peso),
+                       dibujado igual que este archivo.
+
+  _original/           Copias sin comprimir de las 4 imagenes originales (6.6 MB).
+                       Guardalas donde quieras, pero NO las subas al hosting.
+

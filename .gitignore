@@ -1,0 +1,11 @@
+# Copias sin comprimir de las imagenes originales (6.6 MB, no van al sitio)
+img/_original/
+
+# Capturas de referencia del diseno (no forman parte del sitio publicado)
+ref/
+
+# Archivos de sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
