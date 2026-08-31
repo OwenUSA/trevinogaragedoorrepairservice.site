@@ -8,12 +8,11 @@ export const site = {
   brandRest: 'Garage Door Repair',
   domain: 'trevinogaragedoorrepairservice.site',
   url: 'https://trevinogaragedoorrepairservice.site',
-  // OJO: telefono inventado, sustituir por el real antes de publicar
   phone: {
-    href: 'tel:+15614842170',
-    display: '(561) 484-2170',
-    long: '1 (561) 484-2170',
-    schema: '+1-561-484-2170',
+    href: 'tel:+14075592448',
+    display: '(407) 559-2448',
+    long: '1 (407) 559-2448',
+    schema: '+1-407-559-2448',
   },
   email: 'service@trevinogaragedoorrepairservice.site',
   hoursLong: 'Mon – Sat: 7:00 AM – 9:00 PM',
@@ -23,30 +22,24 @@ export const site = {
   priceRange: '$150-$450',
   year: 2026,
   themeColor: '#061a33',
+  founded: 2011,
+  // OJO: correo de privacidad provisional, sustituir por el real antes de publicar
+  privacyEmail: 'privacy@trevinogaragedoorrepairservice.site',
+  legalUpdated: 'August 31, 2026',
 };
 
-export const mainCitySlug = 'BocaRaton';
+// Sede administrativa: NO es una zona de servicio ni tiene pagina propia.
+// Solo sale en la topbar, el pie, Contact Us y el JSON-LD del negocio.
+export const hq = {
+  name: 'Sanford',
+  addr1: '124 Commerce Way, Ste B',
+  zip: '32771',
+  mapQuery: '124 Commerce Way Ste B Sanford FL 32771',
+  label: 'Head Office',
+  meta: 'Administration · Scheduling · 24/7 dispatch',
+};
 
 export const cities = [
-  {
-    slug: "BocaRaton",
-    name: "Boca West",
-    zip: "33433",
-    addr1: "8230 210th St S, Unit 1804",
-    // "dispatched from our ___"
-    dispatchedFrom: "Boca West headquarters",
-    mapQuery: "8230 210th St S Unit 1804 Boca Raton FL 33433",
-    tag: "Main Office",
-    coverageMeta: "Headquarters · Dispatch center · Open 24/7",
-    main: true,
-    whyParagraph: "Every technician dispatched from our Boca West headquarters is licensed, background-checked and rolls out with a fully stocked service vehicle, so most Boca West jobs are finished in a single visit.",
-    localNote: "Boca West and greater Boca Raton are full of gated communities with strict rules on door style, color and hardware. We work with association guidelines every week and can match panel design, glass inserts and finish so your new door gets approved the first time.",
-    reviews: [
-      { initials: "DM", name: "Daniel M.", place: "Boca West, FL", text: "My torsion spring let go on a Sunday morning with the car trapped inside. A technician was here before noon and replaced both springs on the spot. Fair price, no drama." },
-      { initials: "SL", name: "Sofia L.", place: "Boca West, FL", text: "They quoted the job in writing, showed up when they said they would, and the final bill matched the quote exactly. Rare these days." },
-      { initials: "RK", name: "Robert K.", place: "Boca West, FL", text: "New insulated door installed in one morning. The crew hauled the old one away and left the garage cleaner than they found it." },
-    ],
-  },
   {
     slug: "Plantation",
     name: "Plantation",
@@ -121,24 +114,15 @@ export const cities = [
   },
 ];
 
-export const mainCity = cities.find((c) => c.slug === mainCitySlug);
 export const getCity = (slug) => cities.find((c) => c.slug === slug);
 
+// Navbar estandar del sitio: cuatro paginas reales, sin anclas.
+// Home ya existia; About Us, Contact Us y Privacy Policy son paginas propias.
 export const nav = [
-  { label: 'Our Services', hash: 'services' },
-  { label: 'Why Choose Us', hash: 'why' },
-  { label: 'Process', hash: 'process' },
-  { label: 'Service Areas', hash: 'areas' },
-  { label: 'FAQ', hash: 'faq' },
-  { label: 'Contact', hash: 'contact' },
-];
-
-// El nav de las paginas de ciudad es mas corto que el de la home
-export const cityNav = [
-  { label: 'Our Services', hash: 'services' },
-  { label: 'Why Choose Us', hash: 'why' },
-  { label: 'Service Areas', hash: 'areas' },
-  { label: 'Contact', hash: 'contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Contact Us', href: '/contact-us' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
 export const heroPoints = [
@@ -152,7 +136,7 @@ export const heroCardItems = [
   { icon: 'clock', strong: 'Fast response', text: ' — most calls answered in under 60 seconds.' },
   { icon: 'shieldCheck', strong: 'Free estimate', text: ' on every repair before work begins.' },
   { icon: 'truck', strong: 'Stocked trucks', text: ' so most repairs finish in one visit.' },
-  { icon: 'pin', strong: '5 service hubs', text: ' covering Miami and all of South Florida.' },
+  { icon: 'pin', strong: '4 service hubs', text: ' covering Miami and all of South Florida.' },
 ];
 
 export const trustItems = [
@@ -216,7 +200,7 @@ export const steps = [
 ];
 
 export const homeReviews = [
-  { initials: "DM", name: "Daniel M.", place: "Boca West, FL", text: "My torsion spring snapped on a Sunday morning and my car was trapped inside. Trevino had a tech at the house in about two hours and both springs were replaced before lunch. Fair price, no drama." },
+  { initials: "DM", name: "Daniel M.", place: "Boca Raton, FL", text: "My torsion spring snapped on a Sunday morning and my car was trapped inside. Trevino had a tech at the house in about two hours and both springs were replaced before lunch. Fair price, no drama." },
   { initials: "CR", name: "Carolina R.", place: "Coral Gables, FL", text: "They replaced a 20-year-old chain opener with a quiet belt drive and set up the phone app. The technician explained everything and cleaned up perfectly. You would never know they were here." },
   { initials: "JS", name: "Jorge S.", place: "Plantation, FL", text: "We manage three commercial units and Trevino handles all of the rolling doors. Response time is consistently fast and the invoices always match the quote. Easy company to work with." },
 ];
@@ -245,7 +229,7 @@ export const areaTags = [
 export const faq = [
   {
     q: "How fast can you get to my house?",
-    a: "In most of our coverage area we offer same-day service, and emergency calls are typically handled within two to four hours. Because we dispatch from five locations between Miami and North Palm Beach, there is usually a technician close to you at any hour.",
+    a: "In most of our coverage area we offer same-day service, and emergency calls are typically handled within two to four hours. Because we dispatch from four locations between Miami and North Palm Beach, there is usually a technician close to you at any hour.",
   },
   {
     q: "How much does a garage door spring replacement cost?",
@@ -317,3 +301,101 @@ export const directionsUrl = (query) =>
 
 export const mapsSearchUrl = (query) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+/* ==========================================================================
+   About Us  (app/about-us)
+   ========================================================================== */
+
+export const aboutStats = [
+  { value: '4,800+', label: 'Garage doors serviced in South Florida' },
+  { value: '15 yrs', label: 'Working the same three counties' },
+  { value: '4', label: 'Service hubs, Coral Gables to North Palm Beach' },
+  { value: '24/7', label: 'Emergency dispatch, holidays included' },
+];
+
+export const aboutStory = [
+  'Trevino Garage Door Repair started in a single truck out of Boca Raton, run by a technician who was tired of watching homeowners get sold a whole new door when a forty-dollar roller was the actual problem. The rule from that first year has not changed: diagnose the door in front of you, quote the repair it needs, and do not touch anything until the customer has said yes to a number.',
+  'Today our head office sits in Sanford and we dispatch from four service locations between Coral Gables and North Palm Beach. The trucks are bigger and there are more of them, but the work is still done by technicians who live in these neighborhoods — people who know which Plantation subdivisions still run their original 1980s springs, which Coral Gables permits need Miami-Dade product approval, and why a beach house in North Palm Beach eats standard cables in three years.',
+  'We are not a call center that sells your address to whoever bids highest. When you call, you reach our own dispatch, and the technician who shows up is on our payroll, background-checked and carrying the parts for the job you described on the phone.',
+];
+
+export const aboutValues = [
+  {
+    icon: 'dollar',
+    title: 'The quote is the price',
+    text: 'You approve a flat total before a single tool comes off the truck. If we open the door and find something else, we stop and re-quote — we never add it to the invoice and tell you afterwards.',
+  },
+  {
+    icon: 'truck',
+    title: 'One visit, not three',
+    text: 'Springs, cables, rollers, hinges, drums, logic boards and the common opener models ride on every truck. The overwhelming majority of our calls are finished the day we arrive.',
+  },
+  {
+    icon: 'shieldPlain',
+    title: 'Our own technicians',
+    text: 'No subcontractors and no lead-selling. Every technician is licensed, insured, background-checked and trained on our own bench before they are sent to a customer alone.',
+  },
+  {
+    icon: 'shieldCheck',
+    title: 'Built for Florida',
+    text: 'Galvanized springs, stainless fasteners and sealed rollers near the coast, and wind-load rated doors with the county approval paperwork where code requires it. Inland hardware fails early here and we stopped installing it years ago.',
+  },
+  {
+    icon: 'clock',
+    title: 'Someone answers at 3 a.m.',
+    text: 'A door stuck open is an open house. Our emergency line runs nights, weekends and holidays, and it is answered by a person who can dispatch, not a voicemail box.',
+  },
+  {
+    icon: 'trophy',
+    title: 'We come back if it fails',
+    text: 'Every repair carries a written warranty on parts and labor. If something we installed fails inside that window, we return and make it right at no charge. No restocking fees, no argument.',
+  },
+];
+
+export const aboutTimeline = [
+  { year: '2011', title: 'One truck in Boca Raton', text: 'Founded as a single-technician residential repair service working Boca Raton and Delray Beach.' },
+  { year: '2015', title: 'Broward and the commercial side', text: 'The Plantation hub opened and we started servicing rolling steel doors, loading docks and HOA properties.' },
+  { year: '2019', title: 'Into Miami-Dade', text: 'The Coral Gables location opened and we became a licensed installer of Miami-Dade approved, wind-load rated doors.' },
+  { year: '2023', title: 'One dispatch radius', text: 'North Palm Beach completed the map. Every address from Coral Gables to Jupiter is now inside a single dispatch radius.' },
+  { year: '2026', title: 'Head office in Sanford', text: 'Administration, scheduling and dispatch moved to our Sanford office. The service crews and the coverage area did not change.' },
+];
+
+/* ==========================================================================
+   Contact Us  (app/contact-us)
+   ========================================================================== */
+
+export const contactChannels = [
+  {
+    icon: 'phone',
+    title: 'Call us — fastest',
+    lines: ['Answered 24/7, including holidays', 'Most calls picked up in under 60 seconds'],
+    cta: 'phone',
+  },
+  {
+    icon: 'mailSquare',
+    title: 'Email us',
+    lines: ['Quotes, invoices, warranty questions', 'Replies within one business day'],
+    cta: 'email',
+  },
+  {
+    icon: 'pin',
+    title: 'Visit an office',
+    lines: ['Four service offices across the three counties', 'Head office in Sanford for admin and billing'],
+    cta: 'offices',
+  },
+];
+
+export const contactBeforeYouCall = [
+  'The city and ZIP where the door is — it tells us which hub is closest to you.',
+  'What the door is doing: stuck open, stuck closed, off its track, loud, or reversing on its own.',
+  'Whether you heard a bang. A loud bang almost always means a torsion spring, and we load the right size before leaving.',
+  'The opener brand if you can see it, and roughly how old the door is.',
+  'A photo of the spring bar above the door, if it is safe to take one.',
+];
+
+export const officeHours = [
+  { label: 'Monday – Friday', value: '7:00 AM – 9:00 PM' },
+  { label: 'Saturday', value: '7:00 AM – 9:00 PM' },
+  { label: 'Sunday & holidays', value: 'Emergency dispatch' },
+  { label: 'Emergency calls', value: 'Answered 24/7' },
+];

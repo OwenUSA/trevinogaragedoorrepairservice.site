@@ -103,7 +103,7 @@ export default async function CityPage({ params }) {
       <a className="skip-link" href="#main">
         Skip to main content
       </a>
-      <Header variant="city" />
+      <Header />
 
       <main id="main">
 
@@ -362,7 +362,7 @@ export default async function CityPage({ params }) {
           >
             <h2 style={{ marginBottom: '.2em' }}>Other nearby locations</h2>
             <p>
-              {site.brand} covers Miami-Dade, Broward and Palm Beach County from five offices.
+              {site.brand} covers Miami-Dade, Broward and Palm Beach County from four offices.
             </p>
           </div>
           <div className="nearby-grid">

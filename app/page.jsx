@@ -6,7 +6,7 @@ import { Icon } from '../components/Icons';
 import {
   site,
   cities,
-  mainCity,
+  hq,
   homeServices,
   trustItems,
   heroPoints,
@@ -19,7 +19,7 @@ import {
   mapEmbed,
 } from '../data/site';
 
-const title = `Garage Door Repair Boca Raton & South Florida | ${site.brandFirst}`;
+const title = `Garage Door Repair Miami & South Florida | ${site.brandFirst}`;
 const description =
   'Same-day garage door repair across Miami, Broward and Palm Beach County. Spring replacement, opener repair and new installs. Upfront pricing, 24/7 emergency.';
 
@@ -30,7 +30,7 @@ export const metadata = {
     'garage door repair',
     'garage door spring replacement',
     'garage door opener repair',
-    'Boca West garage door',
+    'Fort Lauderdale garage door repair',
     'Miami garage door repair',
     'South Florida garage door service',
   ],
@@ -57,7 +57,7 @@ export const metadata = {
   },
   other: {
     'geo.region': 'US-FL',
-    'geo.placename': mainCity.name,
+    'geo.placename': hq.name,
   },
 };
 
@@ -75,10 +75,10 @@ const businessLd = {
   image: `${site.url}${site.heroImage}`,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: mainCity.addr1,
-    addressLocality: mainCity.name,
+    streetAddress: hq.addr1,
+    addressLocality: hq.name,
     addressRegion: 'FL',
-    postalCode: mainCity.zip,
+    postalCode: hq.zip,
     addressCountry: 'US',
   },
   openingHoursSpecification: [
@@ -94,7 +94,6 @@ const businessLd = {
     ...cities.map((c) => ({ '@type': 'City', name: c.name })),
   ],
   department: cities
-    .filter((c) => !c.main)
     .map((c) => ({
       '@type': 'LocalBusiness',
       name: `${site.brand} - ${c.name}`,
@@ -119,7 +118,7 @@ export default function HomePage() {
         Skip to main content
       </a>
       <TopBar />
-      <Header variant="home" />
+      <Header current="/" />
 
       <main id="main">
 
@@ -332,17 +331,16 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Coverage Areas</span>
-            <h2>Five Service Hubs Covering Miami &amp; South Florida</h2>
+            <h2>Four Service Hubs Covering Miami &amp; South Florida</h2>
             <p>
-              Our main office is in {mainCity.name}, and four additional service locations let us
-              reach all of Miami-Dade, Broward and Palm Beach County quickly. Choose the location
-              closest to you for local details.
+Four service locations let us reach all of Miami-Dade, Broward and Palm Beach
+              County quickly. Choose the one closest to you for local details.
             </p>
           </div>
 
           <div className="grid grid--3">
             {cities.map((c) => (
-              <article className={`area-card${c.main ? ' area-card--main' : ''}`} key={c.slug}>
+              <article className="area-card" key={c.slug}>
                 <span className="area-card__tag">{c.tag}</span>
                 <h3>{c.name}, FL</h3>
                 <address>
@@ -416,8 +414,8 @@ export default function HomePage() {
             <span className="eyebrow">Contact Us</span>
             <h2>Get Your Free Garage Door Estimate</h2>
             <p>
-              Call, text or stop by the {mainCity.name} office. Our emergency line is answered 24
-              hours a day, 7 days a week.
+Call, text or write to our {hq.name} head office. The emergency line is
+              answered 24 hours a day, 7 days a week.
             </p>
           </div>
 
@@ -447,9 +445,9 @@ export default function HomePage() {
                     <Icon name="pin" />
                   </span>
                   <div>
-                    <strong>Main Office</strong>
+                    <strong>Head Office</strong>
                     <span>
-                      {mainCity.addr1}, {mainCity.name}, FL {mainCity.zip}
+                      {hq.addr1}, {hq.name}, FL {hq.zip}
                     </span>
                   </div>
                 </li>
@@ -495,8 +493,8 @@ export default function HomePage() {
             <div>
               <div className="map-embed">
                 <iframe
-                  title={`${site.brand} - ${mainCity.name} office map`}
-                  src={mapEmbed(mainCity.mapQuery)}
+                  title={`${site.brand} - ${hq.name} head office map`}
+                  src={mapEmbed(hq.mapQuery)}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />

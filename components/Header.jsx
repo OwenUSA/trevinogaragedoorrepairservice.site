@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Icon } from './Icons';
-import { site, nav, cityNav } from '../data/site';
+import { site, nav } from '../data/site';
 
 export function Logo({ href = '/', ariaLabel }) {
   return (
@@ -16,11 +16,9 @@ export function Logo({ href = '/', ariaLabel }) {
   );
 }
 
-// variant: 'home' -> los anclajes son de la propia home
-//          'city' -> nav mas corto, y "Home" delante
-export default function Header({ variant = 'home' }) {
-  const items = variant === 'home' ? nav : cityNav;
-
+// `current` es el href de la pagina actual; se marca en el nav.
+// Las paginas de ciudad no son ninguno de los cuatro, asi que lo dejan vacio.
+export default function Header({ current = '' }) {
   return (
     <header className="header">
       <div className="container header__inner">
@@ -33,26 +31,27 @@ export default function Header({ variant = 'home' }) {
 
         <nav className="nav" aria-label="Main navigation">
           <ul className="nav__list">
-            {variant === 'city' && (
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-            )}
-            {items.map((n) => (
-              <li key={n.hash}>
-                <a href={`#${n.hash}`}>{n.label}</a>
+            {nav.map((n) => (
+              <li key={n.href}>
+                <Link
+                  href={n.href}
+                  className={n.href === current ? 'is-current' : undefined}
+                  aria-current={n.href === current ? 'page' : undefined}
+                >
+                  {n.label}
+                </Link>
               </li>
             ))}
           </ul>
-          <a className="btn btn--outline btn--sm btn--quote" href="#contact">
+          <Link className="btn btn--outline btn--sm btn--quote" href="/contact-us">
             Free Quote
-          </a>
+          </Link>
         </nav>
 
         <div className="header__actions">
-          <a className="btn btn--outline btn--sm btn--quote" href="#contact">
+          <Link className="btn btn--outline btn--sm btn--quote" href="/contact-us">
             Free Quote
-          </a>
+          </Link>
           <a className="btn btn--primary btn--sm" href={site.phone.href}>
             <Icon name="phone" />
             Call Now

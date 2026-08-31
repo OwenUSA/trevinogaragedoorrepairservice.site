@@ -20,8 +20,11 @@ GitHub Actions. No se commitea: está en `.gitignore`, igual que `node_modules`.
 ```
 app/layout.jsx           <html>, CSS global y metadata compartida
 app/page.jsx             /                 home
-app/[city]/page.jsx      /BocaRaton /Plantation /NorthPalmBeach /DelrayBeach /CoralGables
-components/Header.jsx    cabecera, nav y boton Free Quote
+app/about-us/page.jsx    /about-us         quienes somos
+app/contact-us/page.jsx  /contact-us       contacto y las cinco oficinas
+app/privacy-policy/...   /privacy-policy   politica de privacidad (A2P 10DLC)
+app/[city]/page.jsx      /Plantation /NorthPalmBeach /DelrayBeach /CoralGables
+components/Header.jsx    cabecera, nav de 4 apartados y boton Free Quote
 components/Footer.jsx    pie, barra de llamada movil y la tarjeta de resena
 components/TopBar.jsx    franja superior de la home
 components/Icons.jsx     los 27 SVG del sitio, por nombre: <Icon name="pin" />
@@ -34,7 +37,11 @@ assets/originales/       los originales de las fotos (NO se publican)
 docs/ref/                capturas de referencia (NO se publican)
 ```
 
-Las cinco páginas de ubicación son **una sola ruta**: `app/[city]/page.jsx` con
+El **navbar tiene cuatro apartados fijos** —Home, About Us, Contact Us y Privacy
+Policy— y cada uno es una página real, no un ancla. Se define en el array `nav`
+de `data/site.js`; `Header` marca el activo con `current`.
+
+Las cuatro páginas de ubicación son **una sola ruta**: `app/[city]/page.jsx` con
 `generateStaticParams()`. Todo lo que cambia entre ellas —dirección, ZIP, mapa,
 párrafo de "Local Knowledge" y **las tres reseñas de cada ciudad**— vive en el
 array `cities` de `data/site.js`, que se extrajo del HTML original durante la
@@ -82,31 +89,34 @@ Cada página lleva su propio JSON-LD `LocalBusiness` con su dirección.
 |---|---|
 | Marca | Trevino Garage Door Repair |
 | Dominio | trevinogaragedoorrepairservice.site |
-| Teléfono | +1 (561) 484-2170 — *inventado, cambiar* |
+| Teléfono | +1 (407) 559-2448 |
 | Email | service@trevinogaragedoorrepairservice.site |
-| Oficina principal | 8230 210th St S, Unit 1804, Boca West, FL 33433 |
+| Email de privacidad | privacy@trevinogaragedoorrepairservice.site — ⚠️ *provisional, cambiar* |
+| Sede (solo direccion) | 124 Commerce Way, Ste B, Sanford, FL 32771 |
 | Horario | Lun–Sáb 7:00 AM – 9:00 PM · Dom y feriados: emergencias 24/7 |
 
 ### Cambiar el teléfono
 
-Aparece en 3 formatos. Buscar y reemplazar en los 6 archivos `.html`:
-
-1. `+15614842170` → en los `href="tel:..."`
-2. `(561) 484-2170` → texto visible
-3. `+1-561-484-2170` → dentro del JSON-LD (schema.org)
+Está en **un solo sitio**: el objeto `phone` de `data/site.js`, con sus cuatro
+formatos (`href` para `tel:`, `display`, `long` y `schema` para el JSON-LD).
+Todas las páginas lo leen de ahí.
 
 ### Coverage areas
 
 | Ciudad | URL | Dirección |
 |---|---|---|
-| Boca West | /BocaRaton | 8230 210th St S, Unit 1804, Boca West, FL 33433 |
 | Plantation | /Plantation | 7901 SW 6th Ct, Ste 3201, Plantation, FL 33324 |
 | North Palm Beach | /NorthPalmBeach | 4440 PGA Blvd, Ste 3017, North Palm Beach, FL 33410 |
 | Delray Beach | /DelrayBeach | 55 SE 2nd Ave, Ste 4004, Delray Beach, FL 33444 |
 | Coral Gables | /CoralGables | 1541 Sunset Dr, Ste B-39, Coral Gables, FL 33143 |
 
-Cada página enlaza a las otras cuatro en "Other nearby locations", y la home
-enlaza a las cinco desde "Coverage Areas".
+Cada página enlaza a las otras en "Other nearby locations", y la home enlaza a
+las cuatro desde "Coverage Areas".
+
+**Sanford NO es una zona de servicio.** Es solo la sede administrativa: vive en
+el objeto `hq` de `data/site.js` y sale unicamente en la topbar, el pie, el
+bloque de contacto de la home, Contact Us y el JSON-LD del negocio. No esta en
+`cities`, no tiene pagina propia y no aparece en "Coverage Areas".
 
 ## Fotos
 
@@ -160,7 +170,7 @@ de Google y puede costar una penalización manual. Cuando haya reseñas reales
 1. Verificar el dominio en **Google Search Console** y enviar el sitemap.
 2. Crear/reclamar el **Google Business Profile** de cada dirección; usar exactamente
    el mismo nombre, teléfono y dirección que el sitio (NAP consistente) y enlazar
-   cada ficha a su URL: `/BocaRaton/`, `/Plantation/`, etc.
+   cada ficha a su URL: `/Plantation/`, `/CoralGables/`, etc.
 3. Pasar el sitio por **PageSpeed Insights** y por el **Rich Results Test**.
 4. Cuando existan redes sociales, poner los links reales en el footer y agregarlos
    como `sameAs` en el JSON-LD.

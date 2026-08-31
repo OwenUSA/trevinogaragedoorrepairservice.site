@@ -1,5 +1,5 @@
 import { Icon } from './Icons';
-import { site, mainCity } from '../data/site';
+import { site, hq } from '../data/site';
 
 export default function TopBar() {
   return (
@@ -8,7 +8,7 @@ export default function TopBar() {
         <ul className="topbar__list">
           <li>
             <Icon name="pin" />
-            {mainCity.addr1}, {mainCity.name}, FL {mainCity.zip}
+            {hq.addr1}, {hq.name}, FL {hq.zip}
           </li>
           <li>
             <Icon name="clock" />

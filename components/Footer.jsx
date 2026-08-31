@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Icon, Stars } from './Icons';
 import { Logo } from './Header';
-import { site, cities, mainCity } from '../data/site';
+import { site, cities, hq } from '../data/site';
 
 function Social() {
   return (
@@ -16,7 +16,7 @@ function Social() {
 }
 
 export default function Footer({ variant = 'home', city = null, bottomPath = '' }) {
-  const addr = city || mainCity;
+  const addr = city || hq;
 
   return (
     <footer className="footer">
@@ -31,27 +31,23 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
           <div>
             <h4>Company</h4>
             <ul>
-              {variant === 'city' && (
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-              )}
               <li>
-                <a href="#services">Services</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <a href="#why">Why Choose Us</a>
+                <Link href="/#services">Services</Link>
               </li>
               <li>
-                <a href="#areas">Locations</a>
+                <Link href="/#areas">Locations</Link>
               </li>
-              {variant === 'home' && (
-                <li>
-                  <a href="#faq">FAQ</a>
-                </li>
-              )}
               <li>
-                <a href="#contact">Free Quote</a>
+                <Link href="/about-us">About Us</Link>
+              </li>
+              <li>
+                <Link href="/contact-us">Contact Us</Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
               </li>
             </ul>
           </div>
@@ -65,9 +61,18 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
                 <a href={`mailto:${site.email}`}>{site.email}</a>
                 <br />
                 <br />
+                <strong className="footer__addr-label">{addr.name} office</strong>
+                <br />
                 {addr.addr1}
                 <br />
                 {addr.name}, FL {addr.zip}
+                <br />
+                <br />
+                <strong className="footer__addr-label">Head office</strong>
+                <br />
+                {hq.addr1}
+                <br />
+                {hq.name}, FL {hq.zip}
                 <br />
                 <br />
                 {site.hoursLong}
@@ -106,9 +111,11 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
                   <a href={`mailto:${site.email}`}>{site.email}</a>
                   <br />
                   <br />
-                  {mainCity.addr1}
+                  <strong className="footer__addr-label">Head office</strong>
                   <br />
-                  {mainCity.name}, FL {mainCity.zip}
+                  {hq.addr1}
+                  <br />
+                  {hq.name}, FL {hq.zip}
                   <br />
                   <br />
                   {site.hoursLong}
@@ -117,9 +124,9 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
                 </address>
               </>
             )}
-            <a className="btn btn--primary btn--sm" href={site.phone.href}>
+            <Link className="btn btn--primary btn--sm" href="/contact-us">
               Request Quote
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -127,7 +134,9 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
           <span>
             &copy; {site.year} {site.brand}. All rights reserved.
           </span>
-          <span>
+          <span className="footer__legal">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <span className="footer__sep">&middot;</span>
             {site.domain}
             {bottomPath}
           </span>
@@ -137,7 +146,7 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
   );
 }
 
-export function CallBar({ secondHref = '#areas', secondLabel = 'Coverage Areas' }) {
+export function CallBar({ secondHref = '/#areas', secondLabel = 'Coverage Areas' }) {
   return (
     <div className="callbar">
       <a className="btn btn--primary" href={site.phone.href}>
