@@ -17,7 +17,7 @@ import {
 
 const title = `About ${site.brand} | South Florida Garage Door Company`;
 const description =
-  'Who we are: a South Florida garage door company running four service hubs from Coral Gables to North Palm Beach, with our own licensed technicians, flat upfront pricing and 24/7 emergency dispatch.';
+  'Who we are: a South Florida garage door company running four service hubs from Coral Gables to North Palm Beach, with our own licensed technicians, stocked trucks and 24/7 emergency dispatch.';
 
 export const metadata = {
   title: { absolute: title },
@@ -93,7 +93,7 @@ export default function AboutPage() {
           <p className="page-hero__lead">
             {site.brand} is a South Florida company with its own licensed technicians, its own
             trucks and its own dispatch line. We repair and install garage doors across Miami-Dade,
-            Broward and Palm Beach County &mdash; and we quote the job before we touch it.
+            Broward and Palm Beach County &mdash; and we come to you.
           </p>
           <div className="hero__actions">
             <a className="btn btn--primary btn--lg" href={site.phone.href}>
@@ -198,7 +198,7 @@ export default function AboutPage() {
             <h2>What a Visit From Us Actually Looks Like</h2>
             <p>
               From your first call to the final safety test, you always know what happens next and
-              what it costs.
+              why.
             </p>
           </div>
           <div className="steps">
@@ -273,7 +273,7 @@ export default function AboutPage() {
               Ready When You Are. <span>Even at 3 a.m.</span>
             </h2>
             <p>
-              Tell us what the door is doing and we will tell you what it costs before anyone picks
+              Tell us what the door is doing and we will tell you what it needs before anyone picks
               up a tool.
             </p>
           </div>
@@ -283,7 +283,7 @@ export default function AboutPage() {
               {site.phone.display}
             </a>
             <Link className="btn btn--ghost btn--lg" href="/contact-us">
-              Request a Free Quote
+              Book a Visit
             </Link>
           </div>
         </div>

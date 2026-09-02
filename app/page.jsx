@@ -21,7 +21,7 @@ import {
 
 const title = `Garage Door Repair Miami & South Florida | ${site.brandFirst}`;
 const description =
-  'Same-day garage door repair across Miami, Broward and Palm Beach County. Spring replacement, opener repair and new installs. Upfront pricing, 24/7 emergency.';
+  'Same-day garage door repair across Miami, Broward and Palm Beach County. Spring replacement, opener repair and new installs. We come to you, 24/7 emergency.';
 
 export const metadata = {
   title: { absolute: title },
@@ -52,7 +52,7 @@ export const metadata = {
   twitter: {
     title,
     description:
-      'Same-day garage door repair, upfront pricing and 24/7 emergency dispatch across Miami and South Florida.',
+      'Same-day garage door repair, stocked trucks and 24/7 emergency dispatch across Miami and South Florida.',
     images: [site.heroImage],
   },
   other: {
@@ -69,7 +69,6 @@ const businessLd = {
   url: `${site.url}/`,
   telephone: site.phone.schema,
   email: site.email,
-  priceRange: '$$',
   description:
     '24/7 garage door repair, spring replacement, opener service and new door installation across Miami and South Florida.',
   image: `${site.url}${site.heroImage}`,
@@ -245,8 +244,8 @@ export default function HomePage() {
             <h2>A Local Crew That Actually Shows Up</h2>
             <p>
               {site.brand} is a South Florida company staffed by technicians who live in the
-              neighborhoods they serve. No subcontractors, no bait-and-switch quotes, no surprise
-              charges once the truck is in your driveway.
+              neighborhoods they serve. No subcontractors, no bait-and-switch, and no work you did not
+              agree to once the truck is in your driveway.
             </p>
             <ul className="checklist">
               {whyChecklist.map((c) => (
@@ -274,7 +273,7 @@ export default function HomePage() {
             <h2>Four Simple Steps to a Working Door</h2>
             <p>
               From your first call to the final safety test, you always know what happens next and
-              what it costs.
+              why.
             </p>
           </div>
           <div className="steps">
@@ -412,7 +411,7 @@ Four service locations let us reach all of Miami-Dade, Broward and Palm Beach
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Contact Us</span>
-            <h2>Get Your Free Garage Door Estimate</h2>
+            <h2>Book a Garage Door Visit</h2>
             <p>
 Call, text or write to our {hq.name} head office. The emergency line is
               answered 24 hours a day, 7 days a week.
@@ -503,8 +502,8 @@ Call, text or write to our {hq.name} head office. The emergency line is
                 <h3>Service Guarantee</h3>
                 <p style={{ marginBottom: 0 }}>
                   If a repair we performed fails within the warranty period, we come back and make it
-                  right at no charge. That is the whole policy &mdash; no fine print, no restocking
-                  fees, no arguing about who is responsible.
+                  right. That is the whole policy &mdash; no fine print, no arguing about who is
+                  responsible.
                 </p>
               </div>
             </div>

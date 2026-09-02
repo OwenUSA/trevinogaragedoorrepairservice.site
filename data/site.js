@@ -19,7 +19,6 @@ export const site = {
   hoursSunday: 'Sun & holidays: emergency dispatch 24/7',
   brandline: 'Your Local Garage Door Experts',
   heroImage: '/img/hero-garage.jpg',
-  priceRange: '$150-$450',
   year: 2026,
   themeColor: '#061a33',
   founded: 2011,
@@ -53,7 +52,7 @@ export const cities = [
     whyParagraph: "Every technician dispatched from our Plantation location is licensed, background-checked and rolls out with a fully stocked service vehicle, so most Plantation jobs are finished in a single visit.",
     localNote: "Plantation homes built in the 70s and 80s often still run their original tracks and undersized springs. When we service an older door here we check the cycle rating of the springs and the condition of the rollers, because replacing worn hardware now costs far less than a door that comes off its tracks later.",
     reviews: [
-      { initials: "JS", name: "Jorge S.", place: "Plantation, FL", text: "We manage three commercial units and Trevino handles every rolling door. Response time is consistently fast and the invoices always match the quote." },
+      { initials: "JS", name: "Jorge S.", place: "Plantation, FL", text: "We manage three commercial units and Trevino handles every rolling door. Response time is consistently fast and they work around our tenants." },
       { initials: "AP", name: "Amanda P.", place: "Plantation, FL", text: "The opener died the night before a trip. They came out the same evening, replaced the logic board and had it working in under an hour." },
       { initials: "MT", name: "Michael T.", place: "Plantation, FL", text: "Door had jumped the track and looked like a disaster. The technician realigned it, replaced two rollers and it runs quieter than before." },
     ],
@@ -90,7 +89,7 @@ export const cities = [
     localNote: "Delray mixes historic bungalows downtown with large villa communities out west, and the two need very different work. Older homes often need track and header reinforcement before a modern insulated door goes in, while villa communities usually want HOA-approved panel styles and quiet belt-drive openers for shared walls.",
     reviews: [
       { initials: "KB", name: "Karen B.", place: "Delray Beach, FL", text: "Second opinion after another company tried to sell me a whole new door. Trevino replaced two rollers and a spring and it has worked perfectly since." },
-      { initials: "AR", name: "Anthony R.", place: "Delray Beach, FL", text: "Straightforward pricing, no upsell, and they texted when the technician was fifteen minutes out. That alone made my day easier." },
+      { initials: "AR", name: "Anthony R.", place: "Delray Beach, FL", text: "Straightforward from the first call, no upsell, and they texted when the technician was fifteen minutes out. That alone made my day easier." },
       { initials: "DF", name: "Denise F.", place: "Delray Beach, FL", text: "The safety sensors kept reversing the door. He realigned them, tightened the tracks and tested it a dozen times before leaving." },
     ],
   },
@@ -128,13 +127,13 @@ export const nav = [
 export const heroPoints = [
   'Same-day appointments',
   'Licensed & insured',
-  'Upfront flat pricing',
+  'We come to you',
   'Warranty on parts & labor',
 ];
 
 export const heroCardItems = [
   { icon: 'clock', strong: 'Fast response', text: ' — most calls answered in under 60 seconds.' },
-  { icon: 'shieldCheck', strong: 'Free estimate', text: ' on every repair before work begins.' },
+  { icon: 'shieldCheck', strong: 'Written diagnosis', text: ' handed to you before work begins.' },
   { icon: 'truck', strong: 'Stocked trucks', text: ' so most repairs finish in one visit.' },
   { icon: 'pin', strong: '4 service hubs', text: ' covering Miami and all of South Florida.' },
 ];
@@ -142,7 +141,7 @@ export const heroCardItems = [
 export const trustItems = [
   { icon: 'clock', title: '24/7 Emergency', text: 'Nights, weekends & holidays' },
   { icon: 'shieldPlain', title: 'Licensed & Insured', text: 'Background-checked techs' },
-  { icon: 'dollar', title: 'Upfront Pricing', text: 'No hidden fees, ever' },
+  { icon: 'check', title: 'You Approve First', text: 'Nothing starts until you say yes' },
   { icon: 'trophy', title: 'Warranty Backed', text: 'Parts & labor guaranteed' },
 ];
 
@@ -186,7 +185,7 @@ export const homeServices = [
 ];
 
 export const whyChecklist = [
-  { strong: 'Flat, upfront pricing', text: 'You approve the total before we pick up a tool.' },
+  { strong: 'You approve the work first', text: 'Nothing starts until you say yes.' },
   { strong: 'One-visit repairs', text: 'Springs, rollers, cables and openers ride on every truck.' },
   { strong: 'Florida-ready materials', text: 'Galvanized, corrosion-resistant hardware for coastal humidity and salt air.' },
   { strong: 'Written warranty', text: 'Every repair is backed on both parts and labor.' },
@@ -195,14 +194,14 @@ export const whyChecklist = [
 export const steps = [
   { n: 1, title: 'Call or Request', text: 'Tell us what the door is doing. We book a same-day or next-morning window that fits your schedule.' },
   { n: 2, title: 'Full Inspection', text: 'The technician tests springs, cables, tracks, rollers and the opener — a 25-point check, not a guess.' },
-  { n: 3, title: 'Upfront Quote', text: 'You get a flat price with options explained in plain English. Nothing is done until you say yes.' },
+  { n: 3, title: 'Plain-English Options', text: 'The technician explains what the door needs and what each option involves. Nothing is done until you say yes.' },
   { n: 4, title: 'Repair & Test', text: 'We complete the work, balance the door, test the safety reverse and clean up before we leave.' },
 ];
 
 export const homeReviews = [
-  { initials: "DM", name: "Daniel M.", place: "Boca Raton, FL", text: "My torsion spring snapped on a Sunday morning and my car was trapped inside. Trevino had a tech at the house in about two hours and both springs were replaced before lunch. Fair price, no drama." },
+  { initials: "DM", name: "Daniel M.", place: "Boca Raton, FL", text: "My torsion spring snapped on a Sunday morning and my car was trapped inside. Trevino had a tech at the house in about two hours and both springs were replaced before lunch. No drama, no upsell." },
   { initials: "CR", name: "Carolina R.", place: "Coral Gables, FL", text: "They replaced a 20-year-old chain opener with a quiet belt drive and set up the phone app. The technician explained everything and cleaned up perfectly. You would never know they were here." },
-  { initials: "JS", name: "Jorge S.", place: "Plantation, FL", text: "We manage three commercial units and Trevino handles all of the rolling doors. Response time is consistently fast and the invoices always match the quote. Easy company to work with." },
+  { initials: "JS", name: "Jorge S.", place: "Plantation, FL", text: "We manage three commercial units and Trevino handles all of the rolling doors. Response time is consistently fast and they work around our tenants. Easy company to work with." },
 ];
 
 export const areaTags = [
@@ -232,8 +231,8 @@ export const faq = [
     a: "In most of our coverage area we offer same-day service, and emergency calls are typically handled within two to four hours. Because we dispatch from four locations between Miami and North Palm Beach, there is usually a technician close to you at any hour.",
   },
   {
-    q: "How much does a garage door spring replacement cost?",
-    a: "Pricing depends on the door size, spring type and cycle rating, so we give you a flat quote after the inspection and before any work starts. We recommend replacing both springs at the same time — they wear at the same rate, and doing them together keeps the door balanced and avoids a second service call.",
+    q: "Should I replace one spring or both?",
+    a: "We recommend replacing both at the same time. Springs wear at the same rate, so when one breaks the other is usually close behind, and doing them together keeps the door balanced and avoids a second service call. The technician confirms the door size, spring type and cycle rating on site before anything is ordered.",
   },
   {
     q: "Can I replace a broken torsion spring myself?",
@@ -249,7 +248,7 @@ export const faq = [
   },
   {
     q: "Is your work under warranty?",
-    a: "Every repair and installation comes with a written warranty covering both parts and labor. The exact term depends on the component — your technician will list it on the invoice before you sign.",
+    a: "Every repair and installation comes with a written warranty covering both parts and labor. The exact term depends on the component — your technician writes it on the paperwork before leaving.",
   },
 ];
 
@@ -271,7 +270,7 @@ export const cityServices = [
     icon: 'bolt',
     title: 'Emergency Service',
     sub: '24/7 garage door service when you need it most.',
-    checks: ['24/7 dispatch', 'Rapid response', 'Upfront pricing'],
+    checks: ['24/7 dispatch', 'Rapid response', 'A person answers'],
   },
   {
     icon: 'shieldCheck',
@@ -321,9 +320,9 @@ export const aboutStory = [
 
 export const aboutValues = [
   {
-    icon: 'dollar',
-    title: 'The quote is the price',
-    text: 'You approve a flat total before a single tool comes off the truck. If we open the door and find something else, we stop and re-quote — we never add it to the invoice and tell you afterwards.',
+    icon: 'check',
+    title: 'You approve before we start',
+    text: 'We tell you what the door needs before a single tool comes off the truck. If we open it up and find something else, we stop and explain it — we never do the extra work first and tell you afterwards.',
   },
   {
     icon: 'truck',
@@ -348,7 +347,7 @@ export const aboutValues = [
   {
     icon: 'trophy',
     title: 'We come back if it fails',
-    text: 'Every repair carries a written warranty on parts and labor. If something we installed fails inside that window, we return and make it right at no charge. No restocking fees, no argument.',
+    text: 'Every repair carries a written warranty on parts and labor. If something we installed fails inside that window, we return and make it right. No fine print, no argument.',
   },
 ];
 
@@ -374,7 +373,7 @@ export const contactChannels = [
   {
     icon: 'mailSquare',
     title: 'Email us',
-    lines: ['Quotes, invoices, warranty questions', 'Replies within one business day'],
+    lines: ['Scheduling, warranty questions, paperwork', 'Replies within one business day'],
     cta: 'email',
   },
   {

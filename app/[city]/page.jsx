@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
   const c = getCity(city);
   if (!c) return {};
   const title = `Garage Door Repair in ${c.name}, FL ${c.zip} | ${site.brandFirst}`;
-  const description = `Same-day garage door repair in ${c.name}, FL. Spring replacement, opener repair, off-track doors and new installs. Upfront pricing, 24/7 emergency dispatch.`;
+  const description = `Same-day garage door repair in ${c.name}, FL. Spring replacement, opener repair, off-track doors and new installs. We come to you, 24/7 emergency dispatch.`;
   return {
     title: { absolute: title },
     description,
@@ -58,7 +58,6 @@ function jsonLd(c) {
     url: `${site.url}/${c.slug}`,
     telephone: site.phone.schema,
     email: site.email,
-    priceRange: site.priceRange,
     parentOrganization: {
       '@type': 'Organization',
       name: site.brand,
@@ -87,7 +86,7 @@ function jsonLd(c) {
 const features = [
   { title: 'Same-Day Service', text: 'Most repairs completed in a single visit.' },
   { title: 'Licensed & Insured', text: 'Fully bonded local technicians.' },
-  { title: 'Upfront Pricing', text: 'Written quote before any work begins.' },
+  { title: 'You Approve First', text: 'Written diagnosis before any work begins.' },
   { title: '24/7 Emergency', text: 'Available nights, weekends and holidays.' },
 ];
 
@@ -130,7 +129,7 @@ export default async function CityPage({ params }) {
               Rated a <strong>top-reviewed garage door repair company</strong> in {c.name}, FL{' '}
               {c.zip}. From snapped springs and frayed cables to noisy openers, off-track panels and
               full new-door installation, our certified {c.name} technicians deliver{' '}
-              <em>same-day service, upfront pricing and a 120-day workmanship warranty</em> on every
+              <em>same-day service, stocked trucks and a 120-day workmanship warranty</em> on every
               repair.
             </p>
 
@@ -249,7 +248,7 @@ export default async function CityPage({ params }) {
               {[
                 `Serving all of ${c.name}, FL ${c.zip} and surrounding neighborhoods`,
                 'Licensed, bonded and insured local technicians',
-                'Upfront pricing — no hidden fees, ever',
+                'Written diagnosis before any work begins',
                 '120-day workmanship warranty on every repair',
                 '24/7 emergency dispatch, including weekends and holidays',
               ].map((t) => (
@@ -262,20 +261,20 @@ export default async function CityPage({ params }) {
         </div>
       </section>
 
-      {/* ============ PRICING ============ */}
+      {/* ============ HOW A VISIT WORKS ============ */}
       <section className="section">
         <div className="container feature-split">
           <div className="feature-split__text">
-            <h2>Fair, transparent pricing in {c.name}</h2>
+            <h2>How a {c.name} garage door visit works</h2>
             <p>
-              No hidden fees, no surprise charges. Every {c.name} job starts with a written quote
-              &mdash; and the final bill matches it.
+              No guessing games. You know what the technician found, what it takes to fix it and
+              what happens next &mdash; before a single tool comes off the truck.
             </p>
             <ul className="check-pills">
               {[
-                'Free on-site estimates',
-                'Written quote before any work begins',
-                `Most repairs between ${site.priceRange.split('-')[0]} and ${site.priceRange.split('-')[1]}`,
+                `Measured and inspected on site, at your ${c.name} address`,
+                'Written diagnosis handed to you before we start',
+                'Same crew nights and weekends — no third-party contractors',
                 'Warranty-backed parts and labor',
               ].map((t) => (
                 <li key={t}>
@@ -391,7 +390,7 @@ export default async function CityPage({ params }) {
             <h2>
               Ready to fix <span>that door?</span>
             </h2>
-            <p>Talk to a local {c.name} expert today &mdash; free, no-obligation quote.</p>
+            <p>Talk to a local {c.name} expert today &mdash; we come to you.</p>
           </div>
           <div className="cta-final__actions">
             <a className="btn btn--primary btn--lg" href={site.phone.href}>
@@ -399,7 +398,7 @@ export default async function CityPage({ params }) {
               Call Now
             </a>
             <a className="btn btn--ghost btn--lg" href="#contact">
-              Get Free Quote
+              Book a Visit
             </a>
           </div>
         </div>

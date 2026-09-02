@@ -44,13 +44,13 @@ export default function Header({ current = '' }) {
             ))}
           </ul>
           <Link className="btn btn--outline btn--sm btn--quote" href="/contact-us">
-            Free Quote
+            Book a Visit
           </Link>
         </nav>
 
         <div className="header__actions">
           <Link className="btn btn--outline btn--sm btn--quote" href="/contact-us">
-            Free Quote
+            Book a Visit
           </Link>
           <a className="btn btn--primary btn--sm" href={site.phone.href}>
             <Icon name="phone" />

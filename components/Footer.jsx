@@ -96,10 +96,10 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
           <div className="footer__quote">
             {variant === 'city' ? (
               <>
-                <h4>Get a Free Estimate</h4>
+                <h4>Book a Visit</h4>
                 <p>
-                  Call us 24/7 or request a quote online. No obligation, on-site estimates in{' '}
-                  {addr.name}.
+                  Call us 24/7 and we put a truck on the way. Every repair in {addr.name} happens
+                  at your address.
                 </p>
               </>
             ) : (
@@ -125,7 +125,7 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
               </>
             )}
             <Link className="btn btn--primary btn--sm" href="/contact-us">
-              Request Quote
+              Request a Visit
             </Link>
           </div>
         </div>

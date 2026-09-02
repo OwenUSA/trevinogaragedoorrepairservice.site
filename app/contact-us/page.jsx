@@ -147,8 +147,8 @@ One number covers every office. Tell us the city and what the door is doing,
             <span className="eyebrow">Ways to Reach Us</span>
             <h2>Three Ways to Get a Technician Moving</h2>
             <p>
-              Phone is the fastest for anything urgent. Email is better for quotes, invoices and
-              warranty paperwork.
+              Phone is the fastest for anything urgent. Email is better for scheduling and warranty
+              paperwork.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ One number covers every office. Tell us the city and what the door is doing,
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Head Office</span>
-            <h2>Get Your Free Garage Door Estimate</h2>
+            <h2>Book a Garage Door Visit</h2>
             <p>
 Call, email or write to our {hq.name} head office. The emergency line is
               answered 24 hours a day, 7 days a week.
