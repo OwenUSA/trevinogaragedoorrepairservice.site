@@ -3,8 +3,11 @@
 
 # build de Next
 /.next
-/out
 next-env.d.ts
+
+# OJO: out/ SI se versiona a proposito. Next solo se usa para generar el sitio;
+# lo que se sube al hosting es el HTML de out/. Si no esta en el repo, al abrir
+# GitHub solo se ve el JSX y no hay ninguna pagina que mirar.
 
 # entorno y logs
 .env*.local
