@@ -1,0 +1,55 @@
+# Compila el sitio y lo publica en GitHub Pages en cada push a main.
+#
+# Hace falta activarlo una vez a mano: Settings -> Pages -> Source: "GitHub Actions".
+# La URL queda en https://<usuario>.github.io/<repo>/
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Que no se pisen dos despliegues, pero sin cancelar el que ya esta en marcha
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build estatico
+        env:
+          # El sitio se sirve desde /<repo>/, no desde la raiz
+          PAGES_BASE_PATH: /${{ github.event.repository.name }}
+        run: |
+          npx next build
+          node scripts/pages-postbuild.mjs
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
